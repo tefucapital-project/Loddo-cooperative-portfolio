@@ -1,0 +1,77 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="potGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="55%" stop-color="#BE4D00" />
+      <stop offset="100%" stop-color="#4F1903" />
+    </linearGradient>
+    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FBBF24" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="128" cy="128" r="124" fill="#1F0A02" />
+  <circle cx="128" cy="128" r="124" fill="none" stroke="url(#ringGradient)" stroke-width="4" />
+
+  <g opacity="0.35" stroke="#FBBF24" stroke-width="2">
+    <path d="M30 60 L42 72 L30 84" fill="none" />
+    <path d="M226 60 L214 72 L226 84" fill="none" />
+    <path d="M30 172 L42 184 L30 196" fill="none" />
+    <path d="M226 172 L214 184 L226 196" fill="none" />
+  </g>
+
+  <g opacity="0.5">
+    <circle cx="128" cy="34" r="3" fill="#FBBF24" />
+    <circle cx="150" cy="38" r="2" fill="#F59E0B" />
+    <circle cx="106" cy="38" r="2" fill="#F59E0B" />
+  </g>
+
+  <path
+    d="M92 108 C92 92 108 82 128 82 C148 82 164 92 164 108 C164 116 160 121 156 125 L160 178 C160 194 146 206 128 206 C110 206 96 194 96 178 L100 125 C96 121 92 116 92 108 Z"
+    fill="url(#potGradient)"
+    stroke="#FFF8ED"
+    stroke-width="2.5"
+  />
+
+  <path
+    d="M96 125 C104 130 116 133 128 133 C140 133 152 130 160 125"
+    fill="none"
+    stroke="#FFF8ED"
+    stroke-width="2.5"
+    opacity="0.85"
+  />
+  <path
+    d="M100 150 C108 154 118 156 128 156 C138 156 148 154 156 150"
+    fill="none"
+    stroke="#FFF8ED"
+    stroke-width="2"
+    opacity="0.55"
+  />
+  <path
+    d="M98 172 C107 176 117 178 128 178 C139 178 149 176 158 172"
+    fill="none"
+    stroke="#FFF8ED"
+    stroke-width="2"
+    opacity="0.55"
+  />
+
+  <ellipse cx="128" cy="90" rx="26" ry="9" fill="none" stroke="#FFF8ED" stroke-width="2.5" opacity="0.9" />
+
+  <path
+    d="M60 108 C70 98 86 96 96 104"
+    fill="none"
+    stroke="#FBBF24"
+    stroke-width="3"
+    stroke-linecap="round"
+    opacity="0.8"
+  />
+  <path
+    d="M196 108 C186 98 170 96 160 104"
+    fill="none"
+    stroke="#FBBF24"
+    stroke-width="3"
+    stroke-linecap="round"
+    opacity="0.8"
+  />
+</svg>
