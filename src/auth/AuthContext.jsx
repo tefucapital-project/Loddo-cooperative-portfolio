@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useState } from 'react';
-import { DEMO_CREDENTIALS, DEMO_MEMBER } from '../data/demoData.js';
+import { DEMO_CREDENTIALS, DEMO_MANAGER, DEMO_MEMBER, MEMBER_CREDENTIALS } from '../data/demoData.js';
 
 const SESSION_KEY = 'loddo_portfolio_session';
 const AuthContext = createContext(null);
@@ -17,14 +17,17 @@ export function AuthProvider({ children }) {
   const [member, setMember] = useState(readSession);
 
   const login = async ({ email, password }) => {
-    const emailOk = email.trim().toLowerCase() === DEMO_CREDENTIALS.email;
-    const passwordOk = password === DEMO_CREDENTIALS.password;
-    if (!emailOk || !passwordOk) {
+    const normalized = email.trim().toLowerCase();
+    const match = [
+      { email: DEMO_CREDENTIALS.email, password: DEMO_CREDENTIALS.password, user: DEMO_MANAGER },
+      { email: MEMBER_CREDENTIALS.email, password: MEMBER_CREDENTIALS.password, user: DEMO_MEMBER },
+    ].find((row) => row.email === normalized && row.password === password);
+    if (!match) {
       throw new Error('Invalid email or password.');
     }
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify(DEMO_MEMBER));
-    setMember(DEMO_MEMBER);
-    return DEMO_MEMBER;
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify(match.user));
+    setMember(match.user);
+    return match.user;
   };
 
   const logout = () => {
@@ -32,7 +35,16 @@ export function AuthProvider({ children }) {
     setMember(null);
   };
 
-  const value = useMemo(() => ({ member, login, logout, isAuthenticated: Boolean(member) }), [member]);
+  const value = useMemo(
+    () => ({
+      member,
+      login,
+      logout,
+      isAuthenticated: Boolean(member),
+      isPortfolioManager: member?.role === 'portfolio_manager',
+    }),
+    [member]
+  );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

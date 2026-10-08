@@ -5,6 +5,7 @@ import EmptyState from '../components/EmptyState.jsx';
 import InvestmentCard from '../components/InvestmentCard.jsx';
 import { DEMO_INVESTMENTS } from '../data/demoData.js';
 import { isIjarah, isMudarabah, matchesHoldingStatus } from '../utils/portfolio.js';
+import PostedPaymentCards from '../components/PostedPaymentCards.jsx';
 
 const TYPE_TABS = [
   { id: 'mudarabah', label: 'Mudaraba', to: '/investments/mudarabah' },
@@ -73,9 +74,12 @@ export default function Investments() {
         </p>
       )}
       {tab === 'ijarah' && (
-        <p className="mb-4 rounded-xl border border-gold/30 bg-highlight-gradient px-4 py-3 text-sm text-ink-muted">
-          Rental income is recorded only after it is received and approved.
-        </p>
+        <>
+          <p className="mb-4 rounded-xl border border-gold/30 bg-highlight-gradient px-4 py-3 text-sm text-ink-muted">
+            Rental income is recorded only after it is received and approved.
+          </p>
+          <PostedPaymentCards />
+        </>
       )}
       <input
         value={search}

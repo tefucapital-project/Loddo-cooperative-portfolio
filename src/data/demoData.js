@@ -5,12 +5,27 @@ export const DEMO_CREDENTIALS = {
   password: 'Admin123!',
 };
 
+export const MEMBER_CREDENTIALS = {
+  email: 'member@loddocoop.com',
+  password: 'Member123!',
+};
+
+export const DEMO_MANAGER = {
+  id: 'manager_portfolio',
+  fullName: 'Portfolio Manager',
+  email: DEMO_CREDENTIALS.email,
+  membershipNumber: 'LDC-2026-0001',
+  accountType: 'Portfolio manager',
+  role: 'portfolio_manager',
+};
+
 export const DEMO_MEMBER = {
   id: 'member_portfolio',
   fullName: 'Portfolio Member',
-  email: DEMO_CREDENTIALS.email,
+  email: MEMBER_CREDENTIALS.email,
   membershipNumber: 'LDC-2026-0099',
   accountType: 'Member',
+  role: 'member',
 };
 
 export const DEMO_WALLET = {

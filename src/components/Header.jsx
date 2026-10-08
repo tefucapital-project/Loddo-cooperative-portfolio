@@ -60,7 +60,7 @@ export default function Header({ onMenu, onLogout }) {
               </span>
               <span className="hidden text-left sm:block">
                 <span className="block text-sm font-semibold leading-tight text-brown-dark">{member?.fullName}</span>
-                <span className="block text-xs text-ink-muted">Member</span>
+                <span className="block text-xs text-ink-muted">{member?.accountType || 'Member'}</span>
               </span>
               <ChevronDown size={15} className="hidden text-ink-muted sm:block" />
             </button>
